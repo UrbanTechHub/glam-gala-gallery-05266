@@ -1,14 +1,17 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Plus, Package, Mail, BarChart } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const QuickActions = () => {
+  const navigate = useNavigate();
+  
   const actions = [
     {
       title: "Add Product",
       description: "Create a new product listing",
       icon: Plus,
-      action: () => console.log("Add product")
+      action: () => navigate("/admin/products")
     },
     {
       title: "Manage Orders",

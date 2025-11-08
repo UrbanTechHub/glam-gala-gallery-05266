@@ -25,6 +25,7 @@ import Returns from "./pages/Returns";
 import FAQ from "./pages/FAQ";
 import AdminLogin from "./pages/AdminLogin";
 import Admin from "./pages/Admin";
+import AdminProducts from "./pages/AdminProducts";
 
 const queryClient = new QueryClient();
 
@@ -57,6 +58,7 @@ const App = () => (
             <Route path="/faq" element={<FAQ />} />
             <Route path="/admin/login" element={<AdminLogin />} />
             <Route path="/admin" element={<Admin />} />
+            <Route path="/admin/products" element={<AdminProducts />} />
           </Routes>
         </BrowserRouter>
         </CartProvider>
