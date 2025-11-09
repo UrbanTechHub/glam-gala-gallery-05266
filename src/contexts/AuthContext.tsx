@@ -115,7 +115,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     } else {
       toast({
         title: "Account created!",
-        description: "Welcome to ÉLÉGANTE.",
+        description: "Welcome to Strickland Fashion.",
       });
     }
 

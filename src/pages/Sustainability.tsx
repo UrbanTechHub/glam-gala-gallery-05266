@@ -52,7 +52,7 @@ const Sustainability = () => {
               <div>
                 <h2 className="text-3xl font-playfair mb-4">Our Commitment</h2>
                 <p className="text-lg text-muted-foreground leading-relaxed">
-                  At ÉLÉGANTE, we believe that true luxury means taking responsibility for our impact on the planet 
+                  At Strickland Fashion, we believe that true luxury means taking responsibility for our impact on the planet 
                   and the people who make our clothing. We're committed to continuous improvement in every aspect of 
                   our supply chain.
                 </p>

@@ -18,7 +18,7 @@ export const MobileMenu = () => {
       </SheetTrigger>
       <SheetContent side="left" className="w-[300px] sm:w-[400px] overflow-y-auto">
         <SheetHeader>
-          <SheetTitle className="text-2xl font-playfair">ÉLÉGANTE</SheetTitle>
+          <SheetTitle className="text-2xl font-playfair">STRICKLAND FASHION</SheetTitle>
         </SheetHeader>
         <nav className="flex flex-col gap-6 mt-8 pb-6">
           <div className="space-y-4">

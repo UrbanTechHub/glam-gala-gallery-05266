@@ -94,7 +94,7 @@ const FAQ = () => {
 
               <AccordionItem value="item-8" className="border border-border rounded-2xl px-6">
                 <AccordionTrigger className="text-lg font-semibold hover:no-underline">
-                  How can I care for my ÉLÉGANTE pieces?
+                  How can I care for my Strickland Fashion pieces?
                 </AccordionTrigger>
                 <AccordionContent className="text-muted-foreground">
                   Each garment includes specific care instructions on the label. Generally, we recommend dry cleaning 

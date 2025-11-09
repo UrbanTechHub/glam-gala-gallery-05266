@@ -17,10 +17,10 @@ const Careers = () => {
 
             <div className="space-y-8">
               <div>
-                <h2 className="text-3xl font-playfair mb-4">Why ÉLÉGANTE?</h2>
+                <h2 className="text-3xl font-playfair mb-4">Why Strickland Fashion?</h2>
                 <p className="text-lg text-muted-foreground leading-relaxed">
                   We're a team of passionate individuals who believe in creating beautiful, sustainable fashion. 
-                  At ÉLÉGANTE, you'll work alongside talented designers, artisans, and fashion lovers who are 
+                  At Strickland Fashion, you'll work alongside talented designers, artisans, and fashion lovers who are 
                   committed to excellence and innovation.
                 </p>
               </div>

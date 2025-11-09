@@ -40,7 +40,7 @@ const Press = () => {
                   <div className="p-6 rounded-2xl bg-secondary/50">
                     <p className="text-sm text-muted-foreground mb-1">Vogue • March 2024</p>
                     <h3 className="text-xl font-semibold mb-2">
-                      "ÉLÉGANTE Redefines Modern Elegance"
+                      "Strickland Fashion Redefines Modern Elegance"
                     </h3>
                     <p className="text-muted-foreground">
                       A deep dive into the brand's commitment to timeless design and sustainable luxury.
@@ -53,7 +53,7 @@ const Press = () => {
                       "The New Wave of Sophisticated Fashion"
                     </h3>
                     <p className="text-muted-foreground">
-                      How ÉLÉGANTE is bringing classical elegance to the modern wardrobe.
+                      How Strickland Fashion is bringing classical elegance to the modern wardrobe.
                     </p>
                   </div>
                 </div>
