@@ -26,7 +26,7 @@ export const Header = () => {
           <MobileMenu />
           
           <Link to="/" className="text-2xl font-playfair tracking-wider">
-            ÉLÉGANTE
+            STRICKLAND FASHION
           </Link>
           
           <nav className="hidden lg:flex items-center gap-8 absolute left-1/2 transform -translate-x-1/2">

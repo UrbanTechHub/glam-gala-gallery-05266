@@ -7,7 +7,7 @@ export const Footer = () => {
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
           <div className="space-y-4">
-            <h3 className="text-2xl font-playfair">ÉLÉGANTE</h3>
+            <h3 className="text-2xl font-playfair">STRICKLAND FASHION</h3>
             <p className="text-sm text-muted-foreground">
               Sophisticated fashion for the modern woman
             </p>
@@ -56,7 +56,7 @@ export const Footer = () => {
         </div>
         
         <div className="pt-8 border-t border-border text-center text-sm text-muted-foreground">
-          <p>© 2024 ÉLÉGANTE. All rights reserved.</p>
+          <p>© 2024 Strickland Fashion. All rights reserved.</p>
         </div>
       </div>
     </footer>
