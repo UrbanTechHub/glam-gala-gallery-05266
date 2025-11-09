@@ -2,15 +2,16 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { useEffect, useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
+import ceoImage from "@/assets/ceo-portrait.png";
 
 const About = () => {
   const [settings, setSettings] = useState({
-    company_name: "ÉLÉGANTE",
+    company_name: "Strickland Fashion",
     ceo_name: "Sophia Laurent",
     ceo_title: "CEO & Founder",
     ceo_bio: "",
     ceo_quote: "",
-    ceo_image_url: "",
+    ceo_image_url: ceoImage,
   });
 
   useEffect(() => {

@@ -25,7 +25,7 @@ export const Header = () => {
         <div className="flex items-center justify-between">
           <MobileMenu />
           
-          <Link to="/" className="text-2xl font-playfair tracking-wider">
+          <Link to="/" className="text-lg sm:text-xl md:text-2xl font-playfair tracking-wider">
             STRICKLAND FASHION
           </Link>
           
