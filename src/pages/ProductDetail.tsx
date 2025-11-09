@@ -5,16 +5,49 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ShoppingCart, ChevronLeft } from "lucide-react";
 import { useCart } from "@/contexts/CartContext";
-import { getAllProducts } from "@/data/collections";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import { supabase } from "@/integrations/supabase/client";
 
 const ProductDetail = () => {
   const { id } = useParams();
   const { addToCart } = useCart();
   const [selectedSize, setSelectedSize] = useState<string>("");
-  
-  const product = getAllProducts().find(p => p.id === id);
+  const [product, setProduct] = useState<any>(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchProduct = async () => {
+      try {
+        const { data, error } = await supabase
+          .from("products")
+          .select("*")
+          .eq("id", id)
+          .single();
+
+        if (error) throw error;
+        setProduct(data);
+      } catch (error) {
+        console.error("Error fetching product:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchProduct();
+  }, [id]);
+
+  if (loading) {
+    return (
+      <div className="min-h-screen">
+        <Header />
+        <main className="pt-20 container mx-auto px-6 py-12">
+          <div className="text-center">Loading...</div>
+        </main>
+        <Footer />
+      </div>
+    );
+  }
 
   if (!product) {
     return (
@@ -33,11 +66,11 @@ const ProductDetail = () => {
     );
   }
 
-  const images = product.images || [product.image];
-  const sizes = product.sizes || ["XS", "S", "M", "L", "XL"];
-  const fullDescription = product.fullDescription || product.description;
-  const material = product.material || "Premium quality fabric with excellent drape and comfort";
-  const care = product.care || "Dry clean only. Do not bleach. Iron on low heat.";
+  const images = [product.image_url];
+  const sizes = ["XS", "S", "M", "L", "XL"];
+  const fullDescription = product.description || "Elegant and sophisticated design crafted with premium materials.";
+  const material = "Premium quality fabric with excellent drape and comfort";
+  const care = "Dry clean only. Do not bleach. Iron on low heat.";
 
   const handleAddToCart = () => {
     if (!selectedSize) {
@@ -45,9 +78,9 @@ const ProductDetail = () => {
     }
     addToCart({ 
       id: product.id, 
-      title: product.title, 
+      title: product.name, 
       price: product.price, 
-      image: product.image,
+      image: product.image_url,
       size: selectedSize 
     });
   };
@@ -72,7 +105,7 @@ const ProductDetail = () => {
                       <div className="aspect-[3/4] rounded-2xl md:rounded-3xl overflow-hidden bg-card">
                         <img
                           src={image}
-                          alt={`${product.title} - Image ${index + 1}`}
+                          alt={`${product.name} - Image ${index + 1}`}
                           className="w-full h-full object-cover"
                         />
                       </div>
@@ -90,15 +123,15 @@ const ProductDetail = () => {
 
             {/* Product Details */}
             <div className="space-y-6">
-              {product.badge && (
+              {(product.is_new_arrival || product.is_featured) && (
                 <Badge variant="secondary" className="rounded-full">
-                  {product.badge}
+                  {product.is_new_arrival ? "New Arrival" : "Featured"}
                 </Badge>
               )}
               
               <div>
                 <h1 className="text-3xl sm:text-4xl md:text-5xl font-playfair mb-3 md:mb-4">
-                  {product.title}
+                  {product.name}
                 </h1>
                 <p className="text-2xl sm:text-3xl md:text-4xl font-semibold text-primary mb-4">
                   ${product.price}
